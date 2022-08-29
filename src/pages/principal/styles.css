@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.w50{
+	padding: 0 10px;
+	width: 50%;
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+
+.container{
+    padding: 20px 0;
+    background: #111;
+}
+
+.container-information{
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px;
+
+    background-color: #111;
+}
+
+.from{
+    display: inline-block;
+    width: 390px;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 33px 55px 33px 55px;
+    margin-left: 100px;
+    margin-right: auto;
+}
+.from2{
+    display: inline-block;
+    width: 390px;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 33px 55px 33px 55px;
+    margin-left: auto;
+    margin-right: 100px;
+}
+
+.text{
+    text-align: center;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.button1{
+    border: none;
+    border-radius: 10px;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 50px;
+
+    background: -webkit-transition(to left, #099410, #7a16a8);
+    background: -o-transition(to left, #099410, #7a16a8);
+    background: -moz-transition(to left, #099410, #7a16a8);
+    background: linear-gradient(to left, #099410, #7a16a8);
+}
+.se-conta{
+    text-align: center;
+    color: #fff;
+}
+
+.button2{
+    border: none;
+    border-radius: 10px;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 50px;
+
+    background: -webkit-transition(to left, #099410, #7a16a8);
+    background: -o-transition(to left, #099410, #7a16a8);
+    background: -moz-transition(to left, #099410, #7a16a8);
+    background: linear-gradient(to left, #099410, #7a16a8);
+}
+
+.go{
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.logo-unb img{
+    width: 50px;
+    margin-bottom: 500px;
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: auto;
+}
