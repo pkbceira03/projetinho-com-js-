@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import logoIMG from '../../images/logo.png';
 import unbIMG from '../../images/unb.png';
 import {searchLogin} from '../../services/api';
-//import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import './styles.css'
 
 function Login() {
 
-  //let history = useHistory()
+  let navigate = useNavigate()
   
   const [email, setEmail] = useState("")
   const [senha, setSenha] = useState("")
@@ -28,7 +28,7 @@ function Login() {
 
   const onSearch = async (email, senha) =>{
     const result = await searchLogin(email, senha)
-    //history.push("/Menu")
+    navigate("/Menu")
   }
 
   return (

@@ -5,7 +5,8 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import unbIMG from '../../images/unb.png';
-//import { useHistory } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+//import { useHistory , Link} from 'react-router-dom';
 
 import './styles.css'
 
@@ -17,20 +18,24 @@ const validationCadastro = yup.object().shape({
 
 function Cadastrar(){
 
+  let navigate = useNavigate()
   //let history = useHistory()
 
   const { register, handleSubmit, formState: { errors } }= useForm({
     resolver: yupResolver(validationCadastro)
   })
 
-  const addUser = data => axios.post("http://localhost:8080/api/usuario", data)
+  const addUser = data => console.log(data)
+  navigate('/')
+  
+  /*axios.post("http://localhost:8080/api/usuario", data)
   .then(() => {
     console.log("certo amem")
     //history.push("/")
   })
   .catch(() => {
     console.log("errado")
-  })
+  })*/
 
   return (
 
