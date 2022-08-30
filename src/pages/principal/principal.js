@@ -9,9 +9,9 @@ function Principal(){
     return(
         <div className="container">
             <div className="container-information">
-                <span className="logo-unb">
-                    <img src={unbIMG} alt="oiii"/>
-                </span>
+                    <span className="logo-unb">
+                        <img src={unbIMG} alt="oiii"/>
+                    </span>
                 <div className='from'>
                     <h2 className='text'>Bem-vindo</h2>
                     <h3 className='text'>Você acaba de chegar ao Feudo Preto Tarras Desvastadas</h3>

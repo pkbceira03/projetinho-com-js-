@@ -1,36 +1,42 @@
-import {useState} from 'react';
+//import {useState} from 'react';
 import { Link } from 'react-router-dom';
 import logoIMG from '../../images/logo.png';
 import unbIMG from '../../images/unb.png';
-import {searchLogin} from '../../services/api';
+//import {searchLogin} from '../../services/api';
 import { useNavigate } from 'react-router-dom';
-
+import axios from 'axios'
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
 import './styles.css'
+
+const validationLogin = yup.object().shape({
+  email: yup.string().required("O email é obrigatório"),
+  senha: yup.string().required("A senha é obrigatório")
+})
 
 function Login() {
 
   let navigate = useNavigate()
+  //let history = useHistory()
+
+  const { register, handleSubmit, formState: { errors } }= useForm({
+    resolver: yupResolver(validationLogin)
+  })
+
+  const getUser = data => console.log(data)
+  navigate('/Menu')
+
+  /*axios.get("http://localhost:8080/api/usuario", data)
+  .then(() => {
+    console.log("certo amem")
+    //navigate("/Menu")
+  })
+  .catch(() => {
+    console.log("errado")
+  })*/
+
   
-  const [email, setEmail] = useState("")
-  const [senha, setSenha] = useState("")
-
-  function emailHandler(e) {
-    setEmail(e.target.value);
-  }
-
-  function passwordHandler(e) {
-    setSenha(e.target.value);
-  }
-
-  function onButtonClick(){
-    onSearch()
-  }
-
-  const onSearch = async (email, senha) =>{
-    const result = await searchLogin(email, senha)
-    navigate("/Menu")
-  }
-
   return (
     <div className="container">
       <div className="container-login">
@@ -38,7 +44,7 @@ function Login() {
           <img src={unbIMG} alt="oiii"/>
         </span>
         <div className="wrap-login">
-          <form className="login-form">
+          <form className="login-form" onSubmit={handleSubmit(getUser)}>
 
             <span className="login-form-title">Bem vindo</span>
 
@@ -47,27 +53,27 @@ function Login() {
             </span>
 
             <div className="wrap-input">
-              <input 
-                className={email !== "" ? 'has-val input' : 'input'} 
-                type="email"
-                value={email}
-                onChange={emailHandler}
-              />
-              <span className="focus-input" data-placeholder="Email"></span>
-            </div>
+                <input 
+                  //className={email !== "" ? 'has-val input' : 'input'} 
+                  type="email"
+                  name="email"{...register("email")}
+                />
+                <p className='error-message'>{errors.email?.message}</p>
+                <span className="focus-input" data-placeholder="Email"></span>
+              </div>
 
-            <div className="wrap-input">
-              <input 
-              className={senha !== "" ? 'has-val input' : 'input'} 
-              type="password"
-              value={senha}
-              onChange={passwordHandler}
-              />
-              <span className="focus-input" data-placeholder="Password"></span>
-            </div>
+              <div className="wrap-input">
+                <input 
+                  //className={senha !== "" ? 'has-val input' : 'input'} 
+                  type="password"
+                  name="senha"{...register("senha")}
+                />
+                <p className='error-message'>{errors.senha?.message}</p>
+                <span className="focus-input" data-placeholder="Senha"></span>
+              </div>
 
             <div className="container-login-form-btn">
-              <button className="login-form-btn" onSubmit={onButtonClick}>Login</button>
+              <button className="login-form-btn">Login</button>
             </div>
 
             <div className="text-center">

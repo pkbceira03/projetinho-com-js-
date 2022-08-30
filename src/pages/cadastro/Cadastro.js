@@ -25,8 +25,13 @@ function Cadastrar(){
     resolver: yupResolver(validationCadastro)
   })
 
-  const addUser = data => console.log(data)
-  navigate('/')
+  const addUser = data => axios.post("http://localhost:8080/api/usuario", data)
+  try{
+    console.log("deu certo")
+    navigate('/');
+  }catch{
+    console.log("deu errado")
+  }
   
   /*axios.post("http://localhost:8080/api/usuario", data)
   .then(() => {
