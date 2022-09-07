@@ -10,17 +10,8 @@
 }
 
 .container-login{
-    width: 100%;
-    min-height: 100vh;
-
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-
-    padding: 15px;
-
-    background-color: #111;
+    background-image: url(../../images/Fundo_Main.png);
+    background-size: cover;
 }
 
 .wrap-login{

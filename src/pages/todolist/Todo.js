@@ -3,6 +3,9 @@ import Header from "./components/Header"
 import CreateArea from './components/CreateArea';
 import Note from "./components/Note"
 import Count from './components/Count';
+import {BsArrowRight} from "react-icons/bs"
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 import "./styles.css"
 
 function Todo(props) {
@@ -12,6 +15,16 @@ const[notes, setNotes] = useState([])
     setNotes((prevValue) =>{
       return[...prevValue, newNote];
     });
+
+    const data = {notes}
+
+    axios.post("http://localhost:8080/api/usuario/{dUsuario}/atividades", data)
+    .then(() => {
+      console.log("certo amem")
+    })
+    .catch(() => {
+      console.log("errado")
+    })
   }
 
   function deleteNotes(id){
@@ -19,7 +32,21 @@ const[notes, setNotes] = useState([])
       return[...preValue.filter((note,index)=>
       index !== id )];
     })
+
+    const data = {id}
+
+    axios.post("http://localhost:8080/api/usuario/{id}/pontos", data)
+    .then(() => {
+      console.log("certo amem")
+    })
+    .catch(() => {
+      console.log("errado")
+    })
   }
+
+  /*function editNotes(id){
+
+  }*/
   return (
     <div className="App">
       <Header />
@@ -36,6 +63,11 @@ const[notes, setNotes] = useState([])
           onDelete={deleteNotes} 
           />
       ))}
+
+    <button>
+      <Link className="passar" to="/Menu"><BsArrowRight size={20}/></Link>
+    </button>
+    
     </div>
   );
 }

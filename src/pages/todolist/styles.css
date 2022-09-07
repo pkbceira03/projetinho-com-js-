@@ -9,7 +9,8 @@ html {
 }
 
 body {
-    background: #111;
+    background-image: url(../../images/Vila.png);
+    background-size: cover;
 }
 
 .header img{
@@ -124,5 +125,14 @@ form button {
     justify-content: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
-
 }
+
+.passar{
+ color: white;
+ background-color: #111;
+ border-color: #111;
+ position: fixed;
+ left: 98%;
+ bottom: 300px;
+}
+
