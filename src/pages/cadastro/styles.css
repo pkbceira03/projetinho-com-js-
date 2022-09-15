@@ -144,10 +144,8 @@
     height: 100px;
 }
 
-.logo-unb img{
+.imagem{
     width: 50px;
-    margin-bottom: 500px;
-    margin-top: 50px;
-    margin-left: 0px;
-    margin-right: 100px;
+    margin-left: -400px;
+    margin-right: 400px;
 }

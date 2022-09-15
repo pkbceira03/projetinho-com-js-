@@ -46,9 +46,11 @@ function Cadastrar(){
 
       <div className="container">
         <div className="container-login">
-          <span className="logo-unb">
-            <img src={unbIMG} alt="oiii"/>
-          </span>
+          <div className='imagem'>
+            <span className="logo-unb">
+              <img src={unbIMG} alt="oiii"/>
+            </span>
+          </div>
           <div className="wrap-login">
             <form className="login-form" onSubmit={handleSubmit(addUser)}>
 

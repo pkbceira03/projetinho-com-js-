@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.todo{
+    display: inline-block;
+    margin-left: 50px;
+    margin-right: auto;
+}
+
+.vila{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: 50px;
+}

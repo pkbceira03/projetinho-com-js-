@@ -33,15 +33,16 @@ const[notes, setNotes] = useState([])
       index !== id )];
     })
 
-    const data = {id}
+    var concluida = true;
 
-    axios.post("http://localhost:8080/api/usuario/{id}/pontos", data)
+    axios.post("http://localhost:8080/api/usuario/{id}/pontos", concluida)
     .then(() => {
       console.log("certo amem")
     })
     .catch(() => {
       console.log("errado")
     })
+
   }
 
   /*function editNotes(id){

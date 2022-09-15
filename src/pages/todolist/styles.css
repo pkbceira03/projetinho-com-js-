@@ -4,12 +4,8 @@
     box-sizing: border-box;
 }
 
-html {
-    font-family: sans-serif;
-}
-
 body {
-    background-image: url(../../images/Vila.png);
+    background-image: url(../../images/field_day_Fundo.png);
     background-size: cover;
 }
 
@@ -30,7 +26,7 @@ body {
 .header h3{
     font-size: 1.5rem;
     margin-left: 10px;
-    color: white;
+    color: black;
 }
 
 form{

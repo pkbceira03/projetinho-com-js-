@@ -3,6 +3,7 @@ import{GiConfirmed} from "react-icons/gi"
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 
+
 function Note({title, content, onDelete,id}) {
     const [posts, setPosts] = useState([])
 

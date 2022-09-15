@@ -62,17 +62,20 @@ function Login() {
   return (
     <div className="container">
       <div className="container-login">
-        <span className="logo-unb">
-          <img src={unbIMG} />
-        </span>
+        <div className='imagem'>
+          <span className="logo-unb">
+            <img src={unbIMG} />
+          </span>
+        </div>
         <div className="wrap-login">
           <form className="login-form" onSubmit={handleSubmit(getUser)}>
 
             <span className="login-form-title">Bem vindo</span>
-
-            <span className="login-form-title">
-              <img src={logoIMG} alt="oiii"/>
-            </span>
+            
+              <span className="login-form-title">
+                <img src={logoIMG} alt="oiii"/>
+              </span>
+            
 
             <div className="wrap-input">
                 <input 
